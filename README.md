@@ -4,4 +4,5 @@
 
 ----
 ### 결과 보는 방법
-> 에디터 실행 -> todoList.html chrome 실행
+- 에디터 실행 -> todoList.html chrome 실행
+- [index.html](https://silver23rain-vue-todolist.glitch.me/)
