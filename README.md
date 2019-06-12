@@ -5,4 +5,4 @@
 ----
 ### 결과 보는 방법
 - 에디터 실행 -> index.html chrome 실행
-- [index.html](https://silver23rain-vue-todolist.glitch.me/)
+- [glitch로 바로 확인하기](https://silver23rain-vue-todolist.glitch.me/)
