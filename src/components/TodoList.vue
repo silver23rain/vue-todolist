@@ -66,19 +66,21 @@ const getLocalStrage = () => {
 const addLocalStorage = (data) => {
     const todoListStorage = getLocalStrage();
     todoListStorage.push(data);
-    console.log(data)
     localStorage.setItem('todoList', JSON.stringify(todoListStorage));
 }
 
-const updateLocalStorage = () => {
-    localStorage.setItem('todoList', JSON.stringify(app.todoList));
+const updateLocalStorage = (todo, index) => {
+    const todoListStorage = getLocalStrage();
+    const originTodo = todoListStorage[index];
+    Object.assign(originTodo, todo)
+    localStorage.setItem('todoList', JSON.stringify(todoListStorage));
 }
 
 Vue.component('todo-context', {
-    props: ['todo'],
+    props: ['todo', 'index'],
     template: '<input type="checkbox" v-model="todo.completed">',
     updated() {
-        updateLocalStorage()
+        updateLocalStorage(this.todo, this.index)
     },
 })
 
