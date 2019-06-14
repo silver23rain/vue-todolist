@@ -1,24 +1,50 @@
+<!doctype html>
+<html lang="ko">
 <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    <!-- <meta name="apple-mobile-web-app-title" content="Weather PWA"> -->
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <title>Todolist PWA</title>
 </head>
 <style>
-    body {
-        padding: 45px;
+    h1 {
+        font-size: 24px;
+    }
+    header {
+        background-color: #585858;
+        color: #ffffff;
+        padding: 10px
     }
     table {
         margin-top: 15px;
+        text-align: center;
+    }
+    td:nth-child(3) {
+        text-align: left;
     }
     .completed {
         color: #eee;
         text-decoration: line-through 
     }
+    #app {
+        margin-top: 15px;
+    }
 </style>
 
 <body>
-    <div id="app">
+    <header>
+        <h1>Vue.js PWA</h1>
+        <button id="butInstall" aria-label="Install" hidden>s</button>
+    </header>
+    <div id="app"  class="container-fluid">
         <div class="input-group">
             <div class="input-group-prepend">
                 <select class="custom-select" v-model="todoContext">
@@ -35,11 +61,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>
+                    <th style="width: 20%">
                         완료
-                    </th>
+                    </th style="width: 20%">
                     <th>분류</th>
-                    <th style="width:80%">해야 할 일</th>
+                    <th style="width:60%">해야 할 일</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,3 +86,5 @@
     </div>
 </body>
 <script src="./todolist.js"></script>
+<script src="./install.js"></script>
+</html>
